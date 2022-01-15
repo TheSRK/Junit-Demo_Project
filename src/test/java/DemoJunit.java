@@ -24,7 +24,7 @@ public class DemoJunit {
         driver.get("https://demoqa.com/");
         String title = driver.getTitle();
 
-        //Assertion
+        //Assertion on title
         Assert.assertEquals("ToolsQA", title);
     }
 

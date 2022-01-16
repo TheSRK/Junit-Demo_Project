@@ -18,6 +18,7 @@ public class DemoJunit {
     By result_email = By.id("email");
     By result_currentAddress = By.id("currentAddress");
     By result_permanentAddress = By.id("permanentAddress");
+    By seeAlert = By.id("alertButton");
 
     @Before
     public void setUp(){
@@ -76,6 +77,15 @@ public class DemoJunit {
         //Assert.assertEquals("Current Address:"+currentAddressValue, output_cAddress);
         //Assert.assertEquals("Permananet Address:"+permanentAddressValue, output_pAddress);
 
+    }
+
+    @Test
+    public void clickAlert(){
+        driver.get("https://demoqa.com/alerts");
+
+        driver.findElement(seeAlert).click();
+        Assert.assertEquals("You clicked a button", "You clicked a button");
+        driver.switchTo().alert().accept();
     }
 
     @After
